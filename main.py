@@ -16,7 +16,7 @@ colors = ['red', 'black', 'blue', '#006400', '#D2691E', '#FFFF00', '#00FFFF', '#
 
 colors_for_circle = ['#000080', '#000000', '#2F4F4F', '#006400', '#8B0000', '#CD5C5C', '#FF4500', '#A0522D']
 
-def getMid(point_1, point_2):
+def middle(point_1, point_2):
     """Division of coordinates for triangles"""
     return ((point_1[0] + point_2[0]) / 2, (point_1[1] + point_2[1]) / 2)
 
@@ -35,16 +35,16 @@ def triangle(points, depth):
     num_color = colors[random.randint(0,14)]
     color(num_color)
     triangle([points[0],
-                    getMid(points[0], points[1]),
-                    getMid(points[0], points[2])],
+                    middle(points[0], points[1]),
+                    middle(points[0], points[2])],
                depth - 1)
     triangle([points[1],
-                    getMid(points[0], points[1]),
-                    getMid(points[1], points[2])],
+                    middle(points[0], points[1]),
+                    middle(points[1], points[2])],
                depth-1)
     triangle([points[2],
-                     getMid(points[2], points[1]),
-                     getMid(points[0], points[2])],
+                     middle(points[2], points[1]),
+                     middle(points[0], points[2])],
                depth-1)
 
 def squares(num_start, num_end):
