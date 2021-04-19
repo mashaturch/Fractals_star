@@ -34,18 +34,9 @@ def triangle(points, depth):
 
     num_color = colors[random.randint(0,14)]
     color(num_color)
-    triangle([points[0],
-                    middle(points[0], points[1]),
-                    middle(points[0], points[2])],
-               depth - 1)
-    triangle([points[1],
-                    middle(points[0], points[1]),
-                    middle(points[1], points[2])],
-               depth-1)
-    triangle([points[2],
-                     middle(points[2], points[1]),
-                     middle(points[0], points[2])],
-               depth-1)
+    triangle([points[0], middle(points[0], points[1]), middle(points[0], points[2])], depth - 1)
+    triangle([points[1], middle(points[0], points[1]), middle(points[1], points[2])], depth - 1)
+    triangle([points[2], middle(points[2], points[1]), middle(points[0], points[2])], depth - 1)
 
 def squares(num_start, num_end):
     """Drawing squares"""
@@ -78,12 +69,12 @@ home()
 goto(0, 20)
 down()
 star(0, 160)
-point_for_circle = [[-185, 230], [185, 225], [270, -70], [0, -240], [-270, -70]]
+points_for_circle = [[-185, 230], [185, 225], [270, -70], [0, -240], [-270, -70]]
 
 # Drawing a circular pattern
 for i in range(5):
     up()
-    goto(point_for_circle[i])
+    goto(points_for_circle[i])
     down()
     squares(0, 50)
 
